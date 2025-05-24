@@ -1,0 +1,276 @@
+/* Base Styles */
+:root {
+    --primary: #6e45e2;
+    --secondary: #88d3ce;
+    --accent: #ff7e5f;
+    --dark: #2a2d3e;
+    --light: #f9f9ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.page-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: var(--primary);
+    background: linear-gradient(120deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    border-radius: 2px;
+}
+
+/* THIS REMOVES THE UNWANTED LINE */
+.experience-section .section-title:after {
+    display: none;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title.center:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+/* Layout */
+.half-width {
+    width: 50%;
+    padding: 0 20px;
+    float: left;
+}
+
+/* Sections */
+.top-banner {
+    padding: 80px 0;
+    background: url('images/top-banner.png') no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.top-banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+    z-index: 0;
+}
+
+.top-banner > div {
+    position: relative;
+    z-index: 1;
+}
+
+.profile-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: perspective(1000px) rotateY(-10deg);
+    transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.dream-section {
+    padding: 80px 0;
+    margin-bottom: 60px;
+    background: url('images/dream-bg.png') no-repeat right center;
+}
+
+.dream-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.dream-img:hover {
+    transform: translateY(-10px);
+}
+
+/* Experience Section */
+.experience-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(110,69,226,0.05) 0%, rgba(136,211,206,0.05) 100%);
+    border-radius: 15px;
+    margin-bottom: 60px;
+}
+
+.experience-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.experience-card {
+    width: 48%;
+    padding: 40px;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary), var(--accent));
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    margin-bottom: 20px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tech-tags span {
+    background: rgba(110, 69, 226, 0.1);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(110, 69, 226, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(110, 69, 226, 0.4);
+}
+
+.cta-button.secondary {
+    background: linear-gradient(to right, var(--secondary), #50c9c3);
+    box-shadow: 0 5px 15px rgba(136, 211, 206, 0.3);
+}
+
+.cta-button.secondary:hover {
+    box-shadow: 0 8px 25px rgba(136, 211, 206, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .half-width {
+        width: 100%;
+        float: none;
+        margin-bottom: 40px;
+    }
+    
+    .experience-card {
+        width: 100%;
+    }
+    
+    .top-banner, .dream-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-wrapper {
+        padding: 20px 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .experience-card {
+        padding: 30px 20px;
+    }
+}
